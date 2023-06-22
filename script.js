@@ -67,6 +67,15 @@ function checkInputs(){
     errorMonths.innerHTML = "Must be a valid month";
     valid = false;
   }
+  const daysInMonth = (month, year) => {
+    // Use a Date object to get the last day of the given month
+    return new Date(year, month, 0).getDate();
+    };
+    
+    if(inputDate.days > daysInMonth(inputDate.months, inputDate.years)){
+    errorDays.innerHTML = "Must be a valid day";
+    valid = false;
+    }
 }
 
 function checkPast(){
